@@ -56,7 +56,7 @@ namespace BCG_Exercise
             this.Countries_list.Name = "Countries_list";
             this.Countries_list.Size = new System.Drawing.Size(121, 21);
             this.Countries_list.TabIndex = 3;
-            this.Countries_list.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.Countries_list.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // Countries
             // 

@@ -26,12 +26,12 @@ namespace BCG_Exercise
         }
 
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataModel dataModel = new DataModel();
             DataController dataController = new DataController(this,dataModel);
             selectedCountry = Countries_list.SelectedItem.ToString();
-            dataController.loadData();
+            dataController.LoadData();
             dataController.CalculateData();
             dataController.ComboBoxChangedMethod();
 
