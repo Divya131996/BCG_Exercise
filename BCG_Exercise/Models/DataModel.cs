@@ -11,33 +11,33 @@ namespace BCG_Exercise.Models
     {
        
          DataTable _dataTable;
-         string _selectedCountry;
+         string _selectedStates;
          double _avg;
          string _sum;
 
 
-        public DataTable dataTable
+        public DataTable DataTable
         {
             get { return _dataTable; }
             set { _dataTable = value; }
         }
 
-        public double avg
+        public double Avg
         {
             get { return _avg; }
             set { _avg = value; }
         }
 
-        public string sum
+        public string Sum
         {
             get { return _sum; }
             set { _sum = value; }
         }
 
-        public string SelectedCountry
+        public string SelectedStates
         {
-            get { return _selectedCountry; }
-            set { _selectedCountry = value; }
+            get { return _selectedStates; }
+            set { _selectedStates = value; }
         }
 
 

@@ -29,11 +29,11 @@ namespace BCG_Exercise.Controller
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
                 {
                     sqlcon.Open();
-                    string query = "SELECT  * from Sale_detail where State='" + _view.selectedCountry + "' ;";
+                    string query = "SELECT  * from Sale_detail where State='" + _view.SelectedState + "' ;";
                     SqlDataAdapter sqldata = new SqlDataAdapter(query, sqlcon);
                     DataTable dt = new DataTable();
                     sqldata.Fill(dt);
-                    _model.dataTable = dt;
+                    _model.DataTable = dt;
                     _view.Dgv1.DataSource = dt;
                 }
             }
@@ -48,13 +48,13 @@ namespace BCG_Exercise.Controller
         {
             try
             {
-                int[] columdata = _model.dataTable.AsEnumerable().Select(r => r.Field<int>("COUNT")).ToArray();
+                int[] columdata = _model.DataTable.AsEnumerable().Select(r => r.Field<int>("COUNT")).ToArray();
                 int rowcount = columdata.Length;
 
                 _view.Average.Text = columdata.Length == 0 ? "" : AverageData(columdata).ToString();
-                _model.avg = AverageData(columdata);
+                _model.Avg = AverageData(columdata);
 
-                _model.sum = SumData(columdata);
+                _model.Sum = SumData(columdata);
                 _view.Sum.Text = columdata == null ? "" : SumData(columdata).ToString();
 
                 _view.Median.Text = columdata == null ? "" : FindMedian(columdata, rowcount).ToString();
@@ -84,7 +84,7 @@ namespace BCG_Exercise.Controller
         }
         public void ComboBoxChangedMethod()
         {
-            _model.SelectedCountry = _view.selectedCountry;
+            _model.SelectedStates = _view.SelectedState;
         }
     }
 }

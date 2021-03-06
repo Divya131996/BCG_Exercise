@@ -8,7 +8,7 @@ namespace BCG_Exercise.View
 {
     public interface IDataView
     {
-        string selectedCountry { get; set; }
+        string SelectedState { get; set; }
       
     }
 }

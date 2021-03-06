@@ -8,20 +8,20 @@ namespace BCG_Exercise
     public partial class DataView : Form, View.IDataView
     {
        
-        public string selectedCountry { get; set; }
+        public string SelectedState { get; set; }
 
        
         public DataView()
         {
             InitializeComponent();
 
-            Countries_list.Items.Add("Illinois");
-            Countries_list.Items.Add("Georgia");
-            Countries_list.Items.Add("New York");
-            Countries_list.Items.Add("California");
-            Countries_list.Items.Add("Washington");
-            Countries_list.Items.Add("Florida");
-            Countries_list.Items.Add("Colorado");
+            State_list.Items.Add("Illinois");
+            State_list.Items.Add("Georgia");
+            State_list.Items.Add("New York");
+            State_list.Items.Add("California");
+            State_list.Items.Add("Washington");
+            State_list.Items.Add("Florida");
+            State_list.Items.Add("Colorado");
 
         }
 
@@ -30,7 +30,7 @@ namespace BCG_Exercise
         {
             DataModel dataModel = new DataModel();
             DataController dataController = new DataController(this,dataModel);
-            selectedCountry = Countries_list.SelectedItem.ToString();
+            SelectedState = State_list.SelectedItem.ToString();
             dataController.LoadData();
             dataController.CalculateData();
             dataController.ComboBoxChangedMethod();

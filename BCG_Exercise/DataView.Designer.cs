@@ -30,8 +30,8 @@ namespace BCG_Exercise
         private void InitializeComponent()
         {
             this.Dgv1 = new System.Windows.Forms.DataGridView();
-            this.Countries_list = new System.Windows.Forms.ComboBox();
-            this.Countries = new System.Windows.Forms.Label();
+            this.State_list = new System.Windows.Forms.ComboBox();
+            this.States = new System.Windows.Forms.Label();
             this.Average = new System.Windows.Forms.TextBox();
             this.Sum = new System.Windows.Forms.TextBox();
             this.Median = new System.Windows.Forms.TextBox();
@@ -51,23 +51,23 @@ namespace BCG_Exercise
             // 
             // Countries_list
             // 
-            this.Countries_list.FormattingEnabled = true;
-            this.Countries_list.Location = new System.Drawing.Point(338, 61);
-            this.Countries_list.Name = "Countries_list";
-            this.Countries_list.Size = new System.Drawing.Size(121, 21);
-            this.Countries_list.TabIndex = 3;
-            this.Countries_list.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            this.State_list.FormattingEnabled = true;
+            this.State_list.Location = new System.Drawing.Point(338, 61);
+            this.State_list.Name = "Countries_list";
+            this.State_list.Size = new System.Drawing.Size(121, 21);
+            this.State_list.TabIndex = 3;
+            this.State_list.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // Countries
+            // States
             // 
-            this.Countries.AllowDrop = true;
-            this.Countries.AutoSize = true;
-            this.Countries.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.Countries.Location = new System.Drawing.Point(250, 62);
-            this.Countries.Name = "Countries";
-            this.Countries.Size = new System.Drawing.Size(69, 20);
-            this.Countries.TabIndex = 5;
-            this.Countries.Text = "Countries";
+            this.States.AllowDrop = true;
+            this.States.AutoSize = true;
+            this.States.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.States.Location = new System.Drawing.Point(267, 62);
+            this.States.Name = "States";
+            this.States.Size = new System.Drawing.Size(47, 20);
+            this.States.TabIndex = 5;
+            this.States.Text = "States";
             // 
             // Average
             // 
@@ -135,8 +135,8 @@ namespace BCG_Exercise
             this.Controls.Add(this.Median);
             this.Controls.Add(this.Sum);
             this.Controls.Add(this.Average);
-            this.Controls.Add(this.Countries);
-            this.Controls.Add(this.Countries_list);
+            this.Controls.Add(this.States);
+            this.Controls.Add(this.State_list);
             this.Controls.Add(this.Dgv1);
             this.Name = "DataView";
             this.Text = "Form1";
@@ -149,9 +149,8 @@ namespace BCG_Exercise
         #endregion
 
         public System.Windows.Forms.DataGridView Dgv1;
-        //private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox Countries_list;
-        private System.Windows.Forms.Label Countries;
+        private System.Windows.Forms.ComboBox State_list;
+        private System.Windows.Forms.Label States;
         public System.Windows.Forms.TextBox Average;
         public System.Windows.Forms.TextBox Sum;
         public System.Windows.Forms.TextBox Median;
