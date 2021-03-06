@@ -9,8 +9,10 @@ namespace BCG_Exercise
     {
        
         public string SelectedState { get; set; }
+        DataController dataController;
 
-       
+
+
         public DataView()
         {
             InitializeComponent();
@@ -25,20 +27,23 @@ namespace BCG_Exercise
 
         }
 
+        public void setController(DataController _dataController)
+        {
+            dataController = _dataController;
+        }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataModel dataModel = new DataModel();
-            DataController dataController = new DataController(this,dataModel);
             SelectedState = State_list.SelectedItem.ToString();
+            dataController.ComboBoxChangedMethod();
             dataController.LoadData();
             dataController.CalculateData();
-            dataController.ComboBoxChangedMethod();
+
 
         }
 
 
-        
+
     }
 }
 

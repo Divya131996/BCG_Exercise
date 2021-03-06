@@ -15,40 +15,31 @@ namespace BCG_Exercise.Controller
     {
         DataView _view;
         DataModel _model = new DataModel();
+        System.Data.DataView dv = null;
 
-        public DataController(DataView view,DataModel model)
+
+        public DataController(DataView view)
         {
             _view = view;
-            _model = model;
-            
+            _view.setController(this);
+
+
         }
         public void LoadData()
         {
-            try {
-                string connectionString = @"Data Source=LAPTOP-MRMP8IMQ\SQLEXPRESS;Initial Catalog=BCG_data;Integrated Security=True; ";
-                using (SqlConnection sqlcon = new SqlConnection(connectionString))
-                {
-                    sqlcon.Open();
-                    string query = "SELECT  * from Sale_detail where State='" + _view.SelectedState + "' ;";
-                    SqlDataAdapter sqldata = new SqlDataAdapter(query, sqlcon);
-                    DataTable dt = new DataTable();
-                    sqldata.Fill(dt);
-                    _model.DataTable = dt;
-                    _view.Dgv1.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            
+            dv = _model.DataTable.DefaultView;
+            dv.RowFilter = string.Format("State LIKE '%{0}%'", _model.SelectedStates);
+            _view.Dgv1.DataSource = dv;
+
+
         }
 
         public void CalculateData()
         {
             try
             {
-                int[] columdata = _model.DataTable.AsEnumerable().Select(r => r.Field<int>("COUNT")).ToArray();
+                int[] columdata = dv.ToTable().AsEnumerable().Select(r => r.Field<int>("Count")).ToArray();
+
                 int rowcount = columdata.Length;
 
                 _view.Average.Text = columdata.Length == 0 ? "" : AverageData(columdata).ToString();
@@ -82,6 +73,7 @@ namespace BCG_Exercise.Controller
         {
             return avg.Sum().ToString();
         }
+
         public void ComboBoxChangedMethod()
         {
             _model.SelectedStates = _view.SelectedState;

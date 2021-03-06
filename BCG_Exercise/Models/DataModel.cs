@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,31 @@ namespace BCG_Exercise.Models
 
         public DataTable DataTable
         {
-            get { return _dataTable; }
+            get
+            {
+                if (_dataTable == null)
+                {
+                    _dataTable = getDataFromDatabase();
+                }
+                return _dataTable;
+            }
             set { _dataTable = value; }
         }
 
+        public DataTable getDataFromDatabase()
+        {
+            string connectionString = @"Data Source=LAPTOP-MRMP8IMQ\SQLEXPRESS;Initial Catalog=BCG_data;Integrated Security=True; ";
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                sqlcon.Open();
+                //string query = "SELECT  * from Sale_detail where State='" + SelectedCountry + "' ;";
+                string query = "SELECT  * from Sale_detail";
+                SqlDataAdapter sqldata = new SqlDataAdapter(query, sqlcon);
+                DataTable dt = new DataTable();
+                sqldata.Fill(dt);
+                return dt;
+            }
+        }
         public double Avg
         {
             get { return _avg; }

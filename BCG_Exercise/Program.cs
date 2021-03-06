@@ -14,12 +14,12 @@ namespace BCG_Exercise
         [STAThread]
         static void Main()
         {
-           
+
             DataView view = new DataView();
-            DataModel dataModel = new DataModel();
             view.Visible = false;
-            DataController dataController = new DataController(view,dataModel);
+            DataController dataController = new DataController(view);
             view.ShowDialog();
+
         }
     }
 }
