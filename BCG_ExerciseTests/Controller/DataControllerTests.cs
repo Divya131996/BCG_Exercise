@@ -30,10 +30,11 @@ namespace BCG_Exercise.Controller.Tests
             table.Rows.Add("Illinois", "February", 100);
             table.Rows.Add("Illinois", "February", 200);
             
-            _model.dataTable = table;
+            _model.DataTable = table;
+            dataController.LoadData();
              dataController.CalculateData();
-            Assert.AreEqual("266.67", Math.Round(_model.avg,2).ToString());
-            Assert.AreEqual("800", _model.sum);
+            Assert.AreEqual("266.67", Math.Round(_model.Avg,2).ToString());
+            Assert.AreEqual("800", _model.Sum);
            
             
 

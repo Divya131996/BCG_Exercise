@@ -29,41 +29,41 @@ namespace BCG_Exercise
         /// </summary>
         private void InitializeComponent()
         {
-            this.Dgv1 = new System.Windows.Forms.DataGridView();
+            this.Datagridview1 = new System.Windows.Forms.DataGridView();
             this.State_list = new System.Windows.Forms.ComboBox();
             this.States = new System.Windows.Forms.Label();
             this.Average = new System.Windows.Forms.TextBox();
             this.Sum = new System.Windows.Forms.TextBox();
             this.Median = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.A = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv1)).BeginInit();
+            this.MedianSaleLable = new System.Windows.Forms.Label();
+            this.AveragesaleLable = new System.Windows.Forms.Label();
+            this.SumSaleLable = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Datagridview1)).BeginInit();
             this.SuspendLayout();
             // 
-            // Dgv1
+            // Datagridview1
             // 
-            this.Dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv1.Location = new System.Drawing.Point(158, 106);
-            this.Dgv1.Name = "Dgv1";
-            this.Dgv1.Size = new System.Drawing.Size(361, 163);
-            this.Dgv1.TabIndex = 0;
+            this.Datagridview1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Datagridview1.Location = new System.Drawing.Point(158, 106);
+            this.Datagridview1.Name = "Datagridview1";
+            this.Datagridview1.Size = new System.Drawing.Size(361, 163);
+            this.Datagridview1.TabIndex = 0;
             // 
-            // Countries_list
+            // State_list
             // 
             this.State_list.FormattingEnabled = true;
-            this.State_list.Location = new System.Drawing.Point(338, 61);
-            this.State_list.Name = "Countries_list";
+            this.State_list.Location = new System.Drawing.Point(294, 63);
+            this.State_list.Name = "State_list";
             this.State_list.Size = new System.Drawing.Size(121, 21);
             this.State_list.TabIndex = 3;
-            this.State_list.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            this.State_list.SelectedIndexChanged += new System.EventHandler(this.StateSelectedChange);
             // 
             // States
             // 
             this.States.AllowDrop = true;
             this.States.AutoSize = true;
             this.States.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.States.Location = new System.Drawing.Point(267, 62);
+            this.States.Location = new System.Drawing.Point(232, 64);
             this.States.Name = "States";
             this.States.Size = new System.Drawing.Size(47, 20);
             this.States.TabIndex = 5;
@@ -93,35 +93,35 @@ namespace BCG_Exercise
             this.Median.Size = new System.Drawing.Size(100, 26);
             this.Median.TabIndex = 9;
             // 
-            // label3
+            // MedianSaleLable
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(584, 198);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Median_sale";
+            this.MedianSaleLable.AutoSize = true;
+            this.MedianSaleLable.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.MedianSaleLable.Location = new System.Drawing.Point(584, 198);
+            this.MedianSaleLable.Name = "MedianSaleLable";
+            this.MedianSaleLable.Size = new System.Drawing.Size(86, 20);
+            this.MedianSaleLable.TabIndex = 12;
+            this.MedianSaleLable.Text = "Median_sale";
             // 
-            // A
+            // AveragesaleLable
             // 
-            this.A.AutoSize = true;
-            this.A.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.A.Location = new System.Drawing.Point(584, 106);
-            this.A.Name = "A";
-            this.A.Size = new System.Drawing.Size(91, 20);
-            this.A.TabIndex = 13;
-            this.A.Text = "Average_sale";
+            this.AveragesaleLable.AutoSize = true;
+            this.AveragesaleLable.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AveragesaleLable.Location = new System.Drawing.Point(584, 106);
+            this.AveragesaleLable.Name = "AveragesaleLable";
+            this.AveragesaleLable.Size = new System.Drawing.Size(91, 20);
+            this.AveragesaleLable.TabIndex = 13;
+            this.AveragesaleLable.Text = "Average_sale";
             // 
-            // label2
+            // SumSaleLable
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(584, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Sum_sale";
+            this.SumSaleLable.AutoSize = true;
+            this.SumSaleLable.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold);
+            this.SumSaleLable.Location = new System.Drawing.Point(584, 148);
+            this.SumSaleLable.Name = "SumSaleLable";
+            this.SumSaleLable.Size = new System.Drawing.Size(70, 20);
+            this.SumSaleLable.TabIndex = 14;
+            this.SumSaleLable.Text = "Sum_sale";
             // 
             // DataView
             // 
@@ -129,18 +129,18 @@ namespace BCG_Exercise
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.A);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.SumSaleLable);
+            this.Controls.Add(this.AveragesaleLable);
+            this.Controls.Add(this.MedianSaleLable);
             this.Controls.Add(this.Median);
             this.Controls.Add(this.Sum);
             this.Controls.Add(this.Average);
             this.Controls.Add(this.States);
             this.Controls.Add(this.State_list);
-            this.Controls.Add(this.Dgv1);
+            this.Controls.Add(this.Datagridview1);
             this.Name = "DataView";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Datagridview1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,15 +148,15 @@ namespace BCG_Exercise
 
         #endregion
 
-        public System.Windows.Forms.DataGridView Dgv1;
+        public System.Windows.Forms.DataGridView Datagridview1;
         private System.Windows.Forms.ComboBox State_list;
         private System.Windows.Forms.Label States;
         public System.Windows.Forms.TextBox Average;
         public System.Windows.Forms.TextBox Sum;
         public System.Windows.Forms.TextBox Median;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label A;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label MedianSaleLable;
+        private System.Windows.Forms.Label AveragesaleLable;
+        private System.Windows.Forms.Label SumSaleLable;
     }
 }
 

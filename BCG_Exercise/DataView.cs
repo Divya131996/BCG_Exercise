@@ -1,18 +1,18 @@
-﻿using System;
+﻿using BCG_Exercise.Controller;
+using System;
 using System.Windows.Forms;
-using BCG_Exercise.Controller;
-using BCG_Exercise.Models;
 
 namespace BCG_Exercise
 {
+    //
     public partial class DataView : Form, View.IDataView
     {
-       
-        public string SelectedState { get; set; }
+        // 
         DataController dataController;
 
-
-
+        /// <summary>
+        /// DataView COntructor
+        /// </summary>
         public DataView()
         {
             InitializeComponent();
@@ -27,23 +27,29 @@ namespace BCG_Exercise
 
         }
 
+        /// <summary>
+        /// change the value of state calculate data for that state
+        /// </summary>
+        /// <param name="sender">Sender object</param>
+        /// <param name="e"Event Arguments></param>
+        private void StateSelectedChange(object sender, EventArgs e)
+        {
+            SelectedState = State_list.SelectedItem.ToString();
+            dataController.StateChangedMethod();
+            dataController.LoadData();
+            dataController.CalculateData();
+        }
+
+     
         public void setController(DataController _dataController)
         {
             dataController = _dataController;
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedState = State_list.SelectedItem.ToString();
-            dataController.ComboBoxChangedMethod();
-            dataController.LoadData();
-            dataController.CalculateData();
+      
+        public string SelectedState { get; set; }
 
-
-        }
-
-
-
+    
     }
 }
 

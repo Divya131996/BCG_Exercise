@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BCG_Exercise.Models
 {
     public class DataModel
     {
-       
-         DataTable _dataTable;
+
+        #region private variables
+        DataTable _dataTable;
          string _selectedStates;
          double _avg;
          string _sum;
+        #endregion
 
-
+        #region public property
         public DataTable DataTable
         {
             get
@@ -29,6 +27,13 @@ namespace BCG_Exercise.Models
             }
             set { _dataTable = value; }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        public System.Data.DataView dv
+        {
+            get; set;
+        }
 
         public DataTable getDataFromDatabase()
         {
@@ -36,7 +41,6 @@ namespace BCG_Exercise.Models
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
             {
                 sqlcon.Open();
-                //string query = "SELECT  * from Sale_detail where State='" + SelectedCountry + "' ;";
                 string query = "SELECT  * from Sale_detail";
                 SqlDataAdapter sqldata = new SqlDataAdapter(query, sqlcon);
                 DataTable dt = new DataTable();
@@ -44,6 +48,10 @@ namespace BCG_Exercise.Models
                 return dt;
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public double Avg
         {
             get { return _avg; }
@@ -62,6 +70,6 @@ namespace BCG_Exercise.Models
             set { _selectedStates = value; }
         }
 
-
+        #endregion
     }
 }
